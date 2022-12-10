@@ -40,6 +40,7 @@ I'd been planning to put these on Github eventually but finally felt encouraged 
 ## Day 6: Comms
 - Solved this the way I would have in Python but it feels a bit less elegant that the equivalent
 - Easily my fastest and most succinct solve so far
+- Used `std::env::args` to read my first argument from the CLI!
 
 ## Day 7: File system
 - Immediately decided I wasn't doing a tree
