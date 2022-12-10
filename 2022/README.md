@@ -1,6 +1,6 @@
 # 2022
 I am finally doing a Rust and here is what I learned.
-I'd been planning to put these on Github but finally felt encouraged to share after seeing [@simonw's similar effort to use AoC to learn Rust on Github](https://github.com/simonw/advent-of-code-2022-in-rust/issues).
+I'd been planning to put these on Github eventually but finally felt encouraged to just share after seeing [@simonw's similar effort to use AoC to learn Rust on Github](https://github.com/simonw/advent-of-code-2022-in-rust/issues).
 
 ## Day 1: Calories
 - Baby's first Rust program
@@ -66,5 +66,5 @@ I'd been planning to put these on Github but finally felt encouraged to share af
     - Discovered `cargo clippy` which offers wonderful suggestions and encouragement for writing `match` statements
 
 ## Day 10: Pixels
-- My biggest trouble today was not reading the question carefully enough
+- My biggest trouble today was not reading the question carefully enough, so it's almost like regular programming
 - Tried out `rustfmt` which seems to be Rust's equivalent of Python's Black except presumably nobody argues about it
