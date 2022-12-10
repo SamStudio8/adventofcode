@@ -20,7 +20,7 @@ I'd been planning to put these on Github eventually but finally felt encouraged 
 - Everything is `unwrap()`, presumably I should be doing this more Rusty
 
 ## Day 3: Backpacks
-- Wrote my first proper function
+- Wrote my first proper function and it doesn't even have a `return` statement
 - `retain()` is a nice function that filters a `HashSet` in place on a predicate
 
 ## Day 4: Overlaps
