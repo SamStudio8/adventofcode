@@ -62,6 +62,7 @@ I'd been planning to put these on Github eventually but finally felt encouraged 
 - Aptly named, I freaked out about this one but it was actually quite straightforward once you understood the rules
 - My solution for part one unnecessarily considered the direction of travel which invalidated the method on part two, which gave me a chance to clean up
 - Diagnosing this required writing a bunch of iterations over arrays and vectors which was useful learning
+- Remembered tuple destructing to get a mutable ref destructured `let (x, y) = &mut vec[0];`
 - Used a `HashSet` of tuples!
 - Negative numbers strike again
 - Was getting worried that my Rust was not very idiomatic
