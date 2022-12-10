@@ -13,9 +13,10 @@ I'd been planning to put these on Github eventually but finally felt encouraged 
 ## Day 2: Rock Paper Scissors
 - I misread Rock Scissors Paper and miscoded the enum
 - I actually played with this one quite a bit after submitting:
-    - Wrote my first `enum` type and my first `HashMap`
-    - Needed to use `#[derive(Copy, Clone)]` to do nice things to the enum
+    - Wrote my first `HashMap`, then converted everything to `enum` types
+    - Needed to use `#[derive(Copy, Clone, PartialEq)]` to do nice things to the enum
     - Implemented the `std::str::FromStr` trait on my enums
+- Wrote my first `match`, which seems to be a big deal in Rust
 - Everything is `unwrap()`, presumably I should be doing this more Rusty
 
 ## Day 3: Backpacks
