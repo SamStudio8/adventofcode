@@ -52,7 +52,7 @@ I'd been planning to put these on Github eventually but finally felt encouraged 
     - `iter_mut()` is a very nice way to iterate over a `HashMap` and modify values directly
 
 ## Day 8: Trees
-- Discovered ranges where start > end silently do nothing
+- Discovered ranges where start > end silently do nothing, need to call `rev()`
 - Why are negative numbers so painful? They seem to be a poison that causes `isize` to spread everywhere?
     - Suspect I am missing something here...
 - My initial solution was less clean but I enjoyed refactoring the four searches to one afterwards
