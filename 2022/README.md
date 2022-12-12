@@ -75,7 +75,7 @@ I'd been planning to put these on Github eventually but finally felt encouraged 
 ## Day 11: Monkey business
 - Is this advent of text parsing 2022?
     - Can't quite believe I got the annoying line parsing working...
-    - Replaced it with Regex so I could stomach to share it here
+    - Replaced it with Regex named capture groups so I could stomach to share it here
 - Wrote my first `Struct`!
 
 ## Day 12: Hill climb
