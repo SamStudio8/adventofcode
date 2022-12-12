@@ -1,6 +1,6 @@
 # 2022
 I am finally doing a Rust and here is what I learned.
-I'd been planning to put these on Github eventually but finally felt encouraged to just share after seeing [@simonw's similar effort to use AoC to learn Rust on Github](https://github.com/simonw/advent-of-code-2022-in-rust/issues).
+I'd been planning to put these on Github eventually but finally felt encouraged to just share my efforts after seeing [@simonw's similar effort to use AoC to learn Rust on Github](https://github.com/simonw/advent-of-code-2022-in-rust/issues). To see a true crab solve things in idiomatic Rust, check out [@fasterthanlime's excellent AoC 2022 series](https://fasterthanli.me/series/advent-of-code-2022).
 
 ## Day 1: Calories
 - Baby's first Rust program
@@ -71,3 +71,11 @@ I'd been planning to put these on Github eventually but finally felt encouraged 
 ## Day 10: Pixels
 - My biggest trouble today was not reading the question carefully enough, so it's almost like regular programming
 - Tried out `rustfmt` which seems to be Rust's equivalent of Python's Black except presumably nobody argues about it
+
+## Day 11: Monkey business
+- Wrote my first `Struct`! Can't quite believe I got the annoying line parsing working.
+
+## Day 12: Hill climb
+- Wrote my second `Struct` but this time with its own `impl` block
+- Tried out the `priority-queue` crate
+- Spent ages debugging the clever Dijkstra bit only to realise I'd messed up the height check with a classic off-by-one -- drawing results out to the screen is definitely helpful
