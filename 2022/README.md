@@ -73,7 +73,10 @@ I'd been planning to put these on Github eventually but finally felt encouraged 
 - Tried out `rustfmt` which seems to be Rust's equivalent of Python's Black except presumably nobody argues about it
 
 ## Day 11: Monkey business
-- Wrote my first `Struct`! Can't quite believe I got the annoying line parsing working.
+- Is this advent of text parsing 2022?
+    - Can't quite believe I got the annoying line parsing working...
+    - Replaced it with Regex so I could stomach to share it here
+- Wrote my first `Struct`!
 
 ## Day 12: Hill climb
 - Wrote my second `Struct` but this time with its own `impl` block
