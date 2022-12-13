@@ -82,3 +82,15 @@ I'd been planning to put these on Github eventually but finally felt encouraged 
 - Wrote my second `Struct` but this time with its own `impl` block
 - Tried out the `priority-queue` crate
 - Spent ages debugging the clever Dijkstra bit only to realise I'd messed up the height check with a classic off-by-one -- drawing results out to the screen is definitely helpful
+
+## Day 13: List distress
+- Advent of Text Parsing continues. I got stuck for a little while so wrote a borderline trivial solution in Python (using `ast.literal_eval` not `eval` ) to wrap my head around the rules and compare my results.
+- Immediately had the right idea to use an `enum` that could contain a value or a `Vec` of itself which made me feel better about having to look at some solutions in the megathread for inspiration on actually implementing it
+- Some String things:
+    - Can use `String::new()` instead of `"".to_string()`
+    - `my_str.push(my_char)` instead of `my_str += &my_char.to_string()`
+    - `my_str.clear()` instead of `my_str = ...`
+- Ordering
+    - Needed to implement `PartialOrd` and `Ord`, used the Python implementation as a template to write a pattern match
+    - `PartialEq` and `Eq` needed for ordering but can just be derived
+- Easily the hardest problem so far (in Rust anyway...)
