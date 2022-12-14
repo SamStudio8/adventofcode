@@ -94,3 +94,7 @@ I'd been planning to put these on Github eventually but finally felt encouraged 
     - Needed to implement `PartialOrd` and `Ord`, used the Python implementation as a template to write a pattern match
     - `PartialEq` and `Eq` needed for ordering but can just be derived
 - Easily the hardest problem so far (in Rust anyway...)
+
+## Day 14: Sand
+- A turning point today, I really enjoyed writing this program and didn't need to look up anything to get it working!
+- Ran `cargo build --release` just to see how hilariously fast it would run on Part 2: `0.01s`!
