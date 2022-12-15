@@ -98,3 +98,8 @@ I'd been planning to put these on Github eventually but finally felt encouraged 
 ## Day 14: Sand
 - A turning point today, I really enjoyed writing this program and didn't need to look up anything to get it working!
 - Ran `cargo build --release` just to see how hilariously fast it would run on Part 2: `0.01s`!
+
+## Day 15: Beacons
+- Extremely wound up from not reading the examples carefully enough. I'd drawn a nice map and thought it did not compare to the solution, only to realise after 30 minutes that the solution map was now wider to show the extra blocked tiles beyond the initial co-ordinates. Luckily this pointed at a solution for Part 1!
+- Notably, the question wound me up, not my Rust abilities. I think I've reached script-kiddie level.
+- Had some fun with the `bit-vec` crate
