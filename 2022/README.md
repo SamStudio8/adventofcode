@@ -103,3 +103,4 @@ I'd been planning to put these on Github eventually but finally felt encouraged 
 - Extremely wound up from not reading the examples carefully enough. I'd drawn a nice map and thought it did not compare to the solution, only to realise after 30 minutes that the solution map was now wider to show the extra blocked tiles beyond the initial co-ordinates. Luckily this pointed at a solution for Part 1!
 - Notably, the question wound me up, not my Rust abilities. I think I've reached script-kiddie level.
 - Had some fun with the `bit-vec` crate
+- Returned to Part 2 afterward to swap the candidate edge HashSet for a Vec and decreased run time from 10s to sub 1s -- seems it is just cheaper to just handle the duplicates than control duplicates via hash
