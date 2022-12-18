@@ -115,9 +115,8 @@ I'd been planning to put these on Github eventually but finally felt encouraged 
 ## Day 17: Tetris
 - Got up early and ranked 2000 for Part 1! Hardest part was working out how to define the shapes I wanted to use in Rust.
 - Spent about 15 minutes trying to work out where I'd introduced an off-by-one error, only to discover I had allowed "increasing" the cave top height to values lower than the current height!
-- Fell asleep trying to detect cycles for Part 2
-- Misread the big boi number and switched my map implementation to use a VecDeque to push new lines onto the top and pop old lines from the bottom which was woefully inadequate for the true number!
-- Wrote my own cycle finding search which was quite fun
+- Misread the big boi number and switched my Vector based map to use a VecDeque, pushing new lines onto the top and popping old lines from the bottom which was of course woefully inadequate for the true number!
+- Fell asleep trying to detect cycles for Part 2 but came back to it later, and wrote my own cycle finding search which was quite fun, also put it in a module and learned to stick `pub` everywhere
 
 ## Day 18: Cubes
 - So straightforward I felt like I was missing something the entire time! Intended to overcomplicate Part 1 with a search which would have been perfect for a faster solve in Part 2.
