@@ -104,3 +104,22 @@ I'd been planning to put these on Github eventually but finally felt encouraged 
 - Notably, the question wound me up, not my Rust abilities. I think I've reached script-kiddie level.
 - Had some fun with the `bit-vec` crate
 - Returned to Part 2 afterward to swap the candidate edge HashSet for a Vec and decreased run time from 10s to sub 1s -- seems it is just cheaper to just handle the duplicates than control duplicates via hash
+
+## Day 16: Valves
+- Hard work! I'd noticed immediately we could ignore rooms that had a zero rate valve which made things much easier.
+- Felt very smart using BFS to work out the distance of all valve pairs for later, but then took the wrong approach in trying to write a heuristic that got very close to the answer.
+- Eventually realised I should have been running DFS to find the highest flow rate recursively. Clunkily got it working for the solve.
+- Discovered the magic `?` shortcut for `unwrap()`
+
+## Day 17: Tetris
+- Got up early and ranked 2000 for Part 1! Hardest part was working out how to define the shapes I wanted to use in Rust.
+- Spent about 15 minutes trying to work out where I'd introduced an off-by-one error, only to discover I had allowed "increasing" the cave top height to values lower than the current height!
+- Fell asleep trying to detect cycles for Part 2
+- Misread the big boi number and switched my map implementation to use a VecDeque to push new lines onto the top and pop old lines from the bottom which was woefully inadequate for the true number!
+- Wrote my own cycle finding search which was quite fun
+
+## Day 18: Cubes
+- So straightforward I felt like I was missing something the entire time! Intended to overcomplicate Part 1 with a search which would have been perfect for a faster solve in Part 2.
+- Learned a neat trick for testing an element is in a range (by just making a range and using `contains`)
+- Collapsed my transform loop into `map` and `collect`, very crab!
+- Still having trouble remembering to pass `&` to things like `my_map.contains` (as it's not needed for inserting)
