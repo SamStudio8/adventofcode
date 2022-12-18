@@ -104,6 +104,7 @@ I'd been planning to put these on Github eventually but finally felt encouraged 
 - Notably, the question wound me up, not my Rust abilities. I think I've reached script-kiddie level.
 - Had some fun with the `bit-vec` crate
 - Returned to Part 2 afterward to swap the candidate edge HashSet for a Vec and decreased run time from 10s to sub 1s -- seems it is just cheaper to just handle the duplicates than control duplicates via hash
+- Update: Came back to this and simplified further by not collecting the cells into a structure at all!
 
 ## Day 16: Valves
 - Hard work! I'd noticed immediately we could ignore rooms that had a zero rate valve which made things much easier.

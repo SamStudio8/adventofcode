@@ -26,7 +26,7 @@ fn main() {
     // the one that is out of range
     // use a Vec instead of HashSet because it's quicker to check a few
     // duplicates than take care of hashing millions of tuples (10s to <1s)
-    let mut edge_positions: Vec<(isize, isize)> = Vec::new();
+    //let mut edge_positions: Vec<(isize, isize)> = Vec::new();
     // even FxHashSet was slower
     // https://nnethercote.github.io/perf-book/hashing.html
     // let mut edge_positions: HashSet<(isize, isize)> = HashSet::default();
@@ -46,7 +46,16 @@ fn main() {
         let beacon_y: isize = matches["beacon_y"].parse().unwrap();
 
         let sensor_r = manhattan(sensor_x, sensor_y, beacon_x, beacon_y);
+        println!(
+            "Sensor ({}, {}) detects Beacon ({}, {}) with r={}",
+            sensor_x, sensor_y, beacon_x, beacon_y, sensor_r,
+        );
         sensors.insert( (sensor_x, sensor_y), sensor_r );
+    }
+
+    let mut count = 0;
+    'sensors: for (sensor, sensor_r) in sensors.iter() {
+        let (sensor_x, sensor_y) = sensor;
 
         // get all edge positions immediately outside the sensor area
         //    0      sensor_y - sensor_r - 1
@@ -59,10 +68,6 @@ fn main() {
         // clip y-axis to [min_edge, max_edge]
         let start_y = max((sensor_y - sensor_r) - 1, min_edge);
         let end_y = min((sensor_y + sensor_r) + 1, max_edge);
-        println!(
-            "Sensor ({}, {}) detects Beacon ({}, {}) with r={}",
-            sensor_x, sensor_y, beacon_x, beacon_y, sensor_r,
-        );
 
         for y in start_y..=end_y {
             //let mut this_scan = vec!['.'; ((max_x-min_x)as usize)+1];
@@ -71,56 +76,24 @@ fn main() {
             let start_x = sensor_x - (sensor_r - y_to_sensor);
             let end_x = sensor_x + (sensor_r - y_to_sensor);
 
-            let l_edge_x = start_x - 1;
-            let r_edge_x = end_x + 1;
-
-            if l_edge_x <= max_edge && l_edge_x >= min_edge {
-                edge_positions.push((l_edge_x, y));
-            }
-            if r_edge_x <= max_edge && r_edge_x >= min_edge {
-                edge_positions.push((r_edge_x, y));
-            }
-
-            //let arr_x = l_edge_x + min_x.abs();
-            //this_scan[arr_x as usize] = 'O';
-            //let arr_x = r_edge_x + min_x.abs();
-            //this_scan[arr_x as usize] = 'O';
-
-            //for x in start_x..=end_x {
-            //    let arr_x = x + min_x.abs();
-            //    if arr_x < 0 {
-            //        continue;
-            //    }
-            //    if arr_x as usize >= this_scan.len() {
-            //        continue;
-            //   }
-            //    this_scan[arr_x as usize] = '#';
-            //}
-
-            //for c in this_scan {
-            //    print!("{}", c);
-            //}
-            //println!();
-        }
-    }
-
-    println!("Tuning...");
-    let mut count: usize = 0;
-    'out: for &edge in edge_positions.iter() {
-        let (edge_x, edge_y) = edge;
-        for (&sensor, &sensor_r) in sensors.iter() {
-            let (sensor_x, sensor_y) = sensor;
-            count += 1;
-            if manhattan(edge_x, edge_y, sensor_x, sensor_y) <= sensor_r {
-                // cell inside this sensor's range
-                // move outer loop to next edge candidate
-                continue 'out
+            'pairs: for edge_x in [start_x - 1, end_x + 1] {
+                if edge_x <= max_edge && edge_x >= min_edge {
+                    count += 1;
+                    for (inner_sensor, &inner_sensor_r) in sensors.iter() {
+                        let (inner_sensor_x, inner_sensor_y) = inner_sensor;
+                        if manhattan(edge_x, y, *inner_sensor_x, *inner_sensor_y) <= inner_sensor_r {
+                            // cell inside this sensor's range
+                            // move outer loop to next edge candidate
+                            continue 'pairs
+                        }
+                    }
+                    // searched all sensors and this cell is still out of range
+                    // it is THE ONE
+                    println!("Tuned cells: {}", count);
+                    println!("Tuning frequency: {}", edge_x * 4000000 + y);
+                    break 'sensors;
+                }
             }
         }
-        // searched all sensors and this cell is still out of range
-        // it is THE ONE
-        println!("Tuned cells: {}", count);
-        println!("Tuning frequency: {}", edge_x * 4000000 + edge_y);
-        break;
     }
 }
