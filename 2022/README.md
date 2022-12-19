@@ -111,6 +111,7 @@ I'd been planning to put these on Github eventually but finally felt encouraged 
 - Felt very smart using BFS to work out the distance of all valve pairs for later, but then took the wrong approach in trying to write a heuristic that got very close to the answer.
 - Eventually realised I should have been running DFS to find the highest flow rate recursively. Clunkily got it working for the solve.
 - Discovered the magic `?` shortcut for `unwrap()`
+- Update: Came back to clean this up as the code was the worst of my AoC journey so far! There's some `clone` going on with my vectors because I don't understand the complexities of borrowing yet. The best addition here was bringing running time to sub 0.1s after realising I could sort the Part 2 paths and stop early if the score sum is too low!
 
 ## Day 17: Tetris
 - Got up early and ranked 2000 for Part 1! Hardest part was working out how to define the shapes I wanted to use in Rust.
