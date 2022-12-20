@@ -124,3 +124,13 @@ I'd been planning to put these on Github eventually but finally felt encouraged 
 - Learned a neat trick for testing an element is in a range (by just making a range and using `contains`)
 - Collapsed my transform loop into `map` and `collect`, very crab!
 - Still having trouble remembering to pass `&` to things like `my_map.contains` (as it's not needed for inserting)
+
+## Day 19: Robots
+- Immediately recognised the need for DFS but fumbled the initial implementation so went outside and left it alone for a bit. Cleaned it up and got it running easily later in the day with a fresh mind. The problem space necessitated some pruning so I decided to always build a geode robot if possible (a controversial choice with the problem purists), otherwise obisidian, elsewise one of the three remaining options.
+- The DFS was a little slow for Part 2 so added an extra rule to not build ore or clay robots if we're holding twice their cost (as we're obviously producing surplus) and got down to sub 1s. Quite pleased with my 10 minute part delta!
+
+## Day 20: Mixing
+- Was excited to try `std::collections::LinkedList`, only to discover that it doesn't support inserting into the middle so seems a bit pointless
+- Thought about implementing my own but that's a too advanced level of effort for today...
+- Went well other than failing to realise a `new_index` of 0 is the back of the list!
+- Learned about `rem_euclid` for getting non-negative remainders
