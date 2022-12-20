@@ -128,6 +128,7 @@ I'd been planning to put these on Github eventually but finally felt encouraged 
 ## Day 19: Robots
 - Immediately recognised the need for DFS but fumbled the initial implementation so went outside and left it alone for a bit. Cleaned it up and got it running easily later in the day with a fresh mind. The problem space necessitated some pruning so I decided to always build a geode robot if possible (a controversial choice with the problem purists), otherwise obisidian, elsewise one of the three remaining options.
 - The DFS was a little slow for Part 2 so added an extra rule to not build ore or clay robots if we're holding twice their cost (as we're obviously producing surplus) and got down to sub 1s. Quite pleased with my 10 minute part delta!
+- Update: Tidied this up to abstract my resource counts into a Struct and defined `std::ops::Add` and `std::ops::Sub` to be able to do simple math ops on them
 
 ## Day 20: Mixing
 - Was excited to try `std::collections::LinkedList`, only to discover that it doesn't support inserting into the middle so seems a bit pointless
