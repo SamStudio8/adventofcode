@@ -135,3 +135,9 @@ I'd been planning to put these on Github eventually but finally felt encouraged 
 - Thought about implementing my own but that's a too advanced level of effort for today...
 - Went well other than failing to realise a `new_index` of 0 is the back of the list!
 - Learned about `rem_euclid` for getting non-negative remainders
+
+## Day 21: Monkey math
+- Hilariously simple Part 1. Less simple Part 2.
+- I'm actually really proud of this one: a nice mix of `struct`, `enum`, some `match` and the usual data structures of `HashMap` and `VecDeque`!
+- Interested to see so many people went with searches instead of outright solving the equations backwards; though, I wrote Part 2 in Python first to get my head around it.
+- But it really must be Christmas with this much `unwrap`'ing I'm doing...
