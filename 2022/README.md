@@ -163,9 +163,46 @@ I'd been planning to put these on Github eventually but finally felt encouraged 
 - Reading the solutions afterwards it seems I need to get better at recognising when to use LCM but manually moving the snowflakes around seems to work perfectly fine -- part 2 runs in 0.4s.
 - Looking forward to this being over tomorrow!
 
+## Day 25: SNAFU
+- SNAFU to Decimal was trivial. Spent longer than I'd have liked getting Decimal back to SNAFU working before realising it's just base5 with some rolling over. We made it to the balloons! Merry Christmas!
+
 ## Summary
 - First and foremost I'm really proud I actually stuck through this to the end when this year gave so many opportunities to nope out.
 - I'm confident to say I've learned the very basics of Rust. I need to go off and learn how to handle negative numbers properly without slapping `as <u|i>size` everywhere, and learn how to keep `&str` instead of cloning `String` all over the place.
 - More importantly, I actually enjoyed writing Rust! I think I am starting to see what the fuss is about and I'm looking forward to taking my skills to the next level.
 - I found it's much easier to write crappy Python than crappy Rust. Explicit types (that actually matter), structs and safety all require more overhead that forces you to think more carefully about what you're doing. This helped me very well during AoC as often my Part 1 could be updated quite easily to handle Part 2 as I had to do it properly rather than quickly.
 - I'd definitely do AoC again but I think I could have done without the pressure of wanting to rank on the private leaderboard.
+
+## Personal Stats
+
+Nothing special. Included for posterity:
+
+```
+      --------Part 1---------   --------Part 2---------
+Day       Time    Rank  Score       Time    Rank  Score
+ 25   03:56:40    5183      0   03:56:55    3844      0
+ 24   07:38:09    5282      0   07:46:05    4982      0
+ 23   06:49:41    6485      0   06:53:00    6230      0
+ 22   07:09:16    7184      0   18:58:21    6539      0
+ 21   13:00:11   14844      0   15:03:09   12450      0
+ 20   05:18:43    5807      0   05:21:17    5063      0
+ 19   12:08:48    5675      0   12:14:53    4657      0
+ 18   07:09:59   11328      0   07:51:50    8255      0
+ 17   01:52:34    2815      0   16:14:52    7581      0
+ 16   16:09:30   11432      0   19:40:35    8254      0
+ 15   15:03:36   23372      0   18:38:55   20137      0
+ 14   14:06:35   24639      0   14:21:22   23397      0
+ 13   13:37:30   24037      0   13:48:51   22895      0
+ 12   09:23:04   19901      0   09:38:40   19220      0
+ 11   05:56:33   20346      0   06:47:17   15527      0
+ 10   05:30:13   24853      0   06:31:27   23457      0
+  9   06:03:49   27030      0   10:25:04   28309      0
+  8   06:36:29   35104      0   08:27:01   33401      0
+  7   06:25:55   27782      0   06:43:41   26652      0
+  6   05:43:30   51174      0   05:44:26   49840      0
+  5   06:20:09   40161      0   06:27:08   38462      0
+  4   16:12:50   88340      0   16:19:07   86401      0
+  3       >24h  109782      0       >24h  105021      0
+  2   18:22:02  113113      0   18:36:35  107213      0
+  1   14:14:29   96195      0   14:35:33   92856      0
+```
