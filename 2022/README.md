@@ -119,7 +119,7 @@ I'd been planning to put these on Github eventually but finally felt encouraged 
 - Misread the big boi number and switched my Vector based map to use a VecDeque, pushing new lines onto the top and popping old lines from the bottom which was of course woefully inadequate for the true number!
 - Fell asleep trying to detect cycles for Part 2 but came back to it later, and wrote my own cycle finding search which was quite fun, also put it in a module and learned to stick `pub` everywhere
 
-## Day 18: Cubes
+## Day 18: Lava droplet
 - So straightforward I felt like I was missing something the entire time! Intended to overcomplicate Part 1 with a search which would have been perfect for a faster solve in Part 2.
 - Learned a neat trick for testing an element is in a range (by just making a range and using `contains`)
 - Collapsed my transform loop into `map` and `collect`, very crab!
@@ -164,6 +164,7 @@ I'd been planning to put these on Github eventually but finally felt encouraged 
 - Looking forward to this being over tomorrow!
 
 ## Summary
+- First and foremost I'm really proud I actually stuck through this to the end when this year gave so many opportunities to nope out.
 - I'm confident to say I've learned the very basics of Rust. I need to go off and learn how to handle negative numbers properly without slapping `as <u|i>size` everywhere, and learn how to keep `&str` instead of cloning `String` all over the place.
 - More importantly, I actually enjoyed writing Rust! I think I am starting to see what the fuss is about and I'm looking forward to taking my skills to the next level.
 - I found it's much easier to write crappy Python than crappy Rust. Explicit types (that actually matter), structs and safety all require more overhead that forces you to think more carefully about what you're doing. This helped me very well during AoC as often my Part 1 could be updated quite easily to handle Part 2 as I had to do it properly rather than quickly.

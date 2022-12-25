@@ -1,5 +1,5 @@
 // Day 18
-// Cubes
+// Lava drop
 
 use regex::Regex;
 use std::collections::HashSet;
