@@ -141,3 +141,25 @@ I'd been planning to put these on Github eventually but finally felt encouraged 
 - I'm actually really proud of this one: a nice mix of `struct`, `enum`, some `match` and the usual data structures of `HashMap` and `VecDeque`!
 - Interested to see so many people went with searches instead of outright solving the equations backwards; though, I wrote Part 2 in Python first to get my head around it.
 - But it really must be Christmas with this much `unwrap`'ing I'm doing...
+
+## Day 22: Cube
+- I am tired of parsing ASCII maps to be honest.
+- Like most others I just hard coded the grid because this is supposed to be fun.
+- I found Part 2 of this puzzle was hilariously difficult (even though in retrospect it should not have been); the scope for off by one errors and flipped signs was huge. I ended up making an unweighted [companion cube](https://genomic.social/@samstudio8/109560113421695445) and deriving all the edge crossing transformations by hand.
+- Finally realised after removing all the rocks from the input that I was not changing the turn direction correctly and finally reached a solve just before midnight.
+- A little disappointed not to have learned anything Rusty after putting so much effort in, today was mostly just about coding tedious rules, but looking back over my solution I'm happy with what I did, which is something!
+
+## Day 23: Planting
+- Took a while to realise I had not stopped elves from moving infinitely!
+
+## Day 24: Blizzard
+- Not my cleanest solve initially, but the `Map` struct that I've been reaching for in many of the puzzles this week continues to prove useful. I wasted a bunch of time trying to do BFS on the map before realising I needed to handle each minute state in lockstep to prevent the map getting out of sync with the search!
+- I wish I'd just ignored the walls or altered the coordinates to start the field interior at (0,0) to remove a bunch of off-by-1 errors.
+- Reading the solutions afterwards it seems I need to get better at recognising when to use LCM but manually moving the snowflakes around seems to work perfectly fine -- part 2 runs in 0.4s.
+- Looking forward to this being over tomorrow!
+
+## Summary
+- I'm confident to say I've learned the very basics of Rust. I need to go off and learn how to handle negative numbers properly without slapping `as <u|i>size` everywhere, and learn how to keep `&str` instead of cloning `String` all over the place.
+- More importantly, I actually enjoyed writing Rust! I think I am starting to see what the fuss is about and I'm looking forward to taking my skills to the next level.
+- I found it's much easier to write crappy Python than crappy Rust. Explicit types (that actually matter), structs and safety all require more overhead that forces you to think more carefully about what you're doing. This helped me very well during AoC as often my Part 1 could be updated quite easily to handle Part 2 as I had to do it properly rather than quickly.
+- I'd definitely do AoC again but I think I could have done without the pressure of wanting to rank on the private leaderboard.
