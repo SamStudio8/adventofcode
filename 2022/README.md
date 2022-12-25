@@ -145,8 +145,9 @@ I'd been planning to put these on Github eventually but finally felt encouraged 
 ## Day 22: Cube
 - I am tired of parsing ASCII maps to be honest.
 - Like most others I just hard coded the grid because this is supposed to be fun.
-- I found Part 2 of this puzzle was hilariously difficult (even though in retrospect it should not have been); the scope for off by one errors and flipped signs was huge. I ended up making an unweighted [companion cube](https://genomic.social/@samstudio8/109560113421695445) and deriving all the edge crossing transformations by hand.
-- Finally realised after removing all the rocks from the input that I was not changing the turn direction correctly and finally reached a solve just before midnight.
+- I found Part 2 of this puzzle was hilariously difficult (even though in retrospect it should not have been); the scope for off by one errors and flipped signs was huge.
+- Like almost everyone else, I ended up making an unweighted [companion cube](https://genomic.social/@samstudio8/109560113421695445) and deriving all the edge crossing transformations by hand.
+- Finally realised after removing all the rocks from the input and using some of my own test data that I was not changing the turn direction correctly and finally reached a solve just before midnight.
 - A little disappointed not to have learned anything Rusty after putting so much effort in, today was mostly just about coding tedious rules, but looking back over my solution I'm happy with what I did, which is something!
 
 ## Day 23: Planting
