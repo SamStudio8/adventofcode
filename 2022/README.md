@@ -150,10 +150,14 @@ I'd been planning to put these on Github eventually but finally felt encouraged 
 - A little disappointed not to have learned anything Rusty after putting so much effort in, today was mostly just about coding tedious rules, but looking back over my solution I'm happy with what I did, which is something!
 
 ## Day 23: Planting
-- Took a while to realise I had not stopped elves from moving infinitely!
+- Pretty straightforward and a significant relief after yesterday's bloodbath.
+- Took me longer than I care to admit I had not stopped elves from moving infinitely!
+- Enjoyed using my previous `Map` struct for reading and drawing a grid-based map, though I should have done this with HashMap.
+- I had a gut feeling the input data was small enough to just use a grid, so I just set the grid to be big enough to hold the result and got on with my Christmas.
 
 ## Day 24: Blizzard
-- Not my cleanest solve initially, but the `Map` struct that I've been reaching for in many of the puzzles this week continues to prove useful. I wasted a bunch of time trying to do BFS on the map before realising I needed to handle each minute state in lockstep to prevent the map getting out of sync with the search!
+- Not my cleanest solve initially, but the `Map` struct that I've been reaching for in many of the puzzles this week continues to prove useful. Although I wish I'd implemented the HashMap for yesterday like I said I should have!
+- I wasted a bunch of time trying to do BFS on the map before realising I needed to handle each minute state in lockstep to prevent the map getting out of sync with the search!
 - I wish I'd just ignored the walls or altered the coordinates to start the field interior at (0,0) to remove a bunch of off-by-1 errors.
 - Reading the solutions afterwards it seems I need to get better at recognising when to use LCM but manually moving the snowflakes around seems to work perfectly fine -- part 2 runs in 0.4s.
 - Looking forward to this being over tomorrow!
