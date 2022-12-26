@@ -162,13 +162,14 @@ I'd been planning to put these on Github eventually but finally felt encouraged 
 - I wish I'd just ignored the walls or altered the coordinates to start the field interior at (0,0) to remove a bunch of off-by-1 errors.
 - Reading the solutions afterwards it seems I need to get better at recognising when to use LCM but manually moving the snowflakes around seems to work perfectly fine -- part 2 runs in 0.4s.
 - Looking forward to this being over tomorrow!
+- **Update**: I have discovered `checked_add_signed` and removed the plague of `as isize`
 
 ## Day 25: SNAFU
 - SNAFU to Decimal was trivial. Spent longer than I'd have liked getting Decimal back to SNAFU working before realising it's just base5 with some rolling over. We made it to the balloons! Merry Christmas!
 
 ## Summary
 - First and foremost I'm really proud I actually stuck through this to the end when this year gave so many opportunities to nope out.
-- I'm confident to say I've learned the very basics of Rust. I need to go off and learn how to handle negative numbers properly without slapping `as <u|i>size` everywhere, and learn how to keep `&str` instead of cloning `String` all over the place.
+- I'm confident to say I've learned the very basics of Rust. I need to go off and learn how to handle negative numbers properly without slapping `as <u|i>size` everywhere (**update**, it's [`checked_add_signed`](https://doc.rust-lang.org/std/primitive.usize.html#method.checked_add_signed)), and learn how to keep `&str` instead of cloning `String` all over the place.
 - More importantly, I actually enjoyed writing Rust! I think I am starting to see what the fuss is about and I'm looking forward to taking my skills to the next level.
 - I found it's much easier to write crappy Python than crappy Rust. Explicit types (that actually matter), structs and safety all require more overhead that forces you to think more carefully about what you're doing. This helped me very well during AoC as often my Part 1 could be updated quite easily to handle Part 2 as I had to do it properly rather than quickly.
 - I'd definitely do AoC again but I think I could have done without the pressure of wanting to rank on the private leaderboard.

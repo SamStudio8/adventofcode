@@ -68,8 +68,8 @@ impl Map {
             println!();
         }
     }
-    fn oob(&self, x: isize, y: isize) -> bool {
-        x < 0 || y < 0  || x >= self.width as isize || y >= self.height as isize
+    fn oob(&self, x: usize, y: usize) -> bool {
+        x >= self.width || y >= self.height
     }
     fn occupied(&self, x: usize, y: usize) -> bool {
         if (x, y) == self.start || (x, y) == self.end {
@@ -106,22 +106,22 @@ impl Map {
             for &flake in dir_vec.iter() {
                 let d = *dir_to_idx.get(&flake).unwrap();
                 let t = TRANSFORMS[d];
-                let mut dx = x as isize + t.0;
-                let mut dy = y as isize + t.1;
+                let mut dx = x.checked_add_signed(t.0).unwrap();
+                let mut dy = y.checked_add_signed(t.1).unwrap();
                 // lol should probably clean this up but its christmas eve :shrug:
                 if dx == 0 {
-                    dx = self.width as isize - 2;
+                    dx = self.width - 2;
                 }
-                else if dx == self.width as isize - 1 {
+                else if dx == self.width - 1 {
                     dx = 1;
                 }
                 if dy == 0 {
-                    dy = self.height as isize - 2;
+                    dy = self.height - 2;
                 }
-                else if dy == self.height as isize - 1 {
+                else if dy == self.height - 1 {
                     dy = 1;
                 }
-                new_blizzards_m.entry((dx as usize, dy as usize))
+                new_blizzards_m.entry((dx, dy))
                     .or_default()
                     .push(flake);
             }
@@ -185,18 +185,23 @@ fn main() {
                 visited.insert( (px, py, map.minutes) );
 
                 for t in TRANSFORMS {
-                    let dpx = px as isize + t.0;
-                    let dpy = py as isize + t.1;
-                    if (dpx as usize, dpy as usize) == goal {
+                    let dpx = px.checked_add_signed(t.0);
+                    let dpy = py.checked_add_signed(t.1);
+                    if dpx.is_none() || dpy.is_none() {
+                        continue;
+                    }
+                    let dpx = dpx.unwrap();
+                    let dpy = dpy.unwrap();
+                    if (dpx, dpy) == goal {
                         // shortcut goal step from in here to keep minutes right
                         println!("{} {}, {} {}, g={:?}, mp={:?}", px, py, dpx, dpy, goal, map.position);
                         goal_times.push(map.minutes);
-                        map.position = (dpx as usize, dpy as usize);
+                        map.position = (dpx, dpy);
                         println!("Reached ({}, {})@{}' after {} states", goal.0, goal.1, map.minutes, visited.len());
                         break 'search;
                     }
-                    if !map.oob(dpx, dpy) && !map.occupied(dpx as usize, dpy as usize) {
-                        next_q.push_back((dpx as usize, dpy as usize));
+                    if !map.oob(dpx, dpy) && !map.occupied(dpx, dpy) {
+                        next_q.push_back((dpx, dpy));
                     }
                 }
             }
